@@ -181,7 +181,7 @@ button {
 
 @media (width > 1024px) {
   .xlog-page-index .xlog-header {
-    height: 350px;
+    height: 100vh;
     top: calc(40px - 100vh);
   }
 }
@@ -189,7 +189,7 @@ button {
 .xlog-site-name {
   color: var(--theme-color);
   font-family: Candyshop,cursive;
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, -1.414px 0 0 #fff, 1.414px 0 0 #fff, 0 -1.414px 0 #fff, 0 1.414px 0 #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #7287fd, 0 0 82px #7287fd, 0 0 92px #7287fd, 0 0 102px #7287fd, 0 0 151px #7287fd;
   font-size: 35px;
 }
 
@@ -210,7 +210,7 @@ button {
 .xlog-site-description {
   background-image: -webkit-linear-gradient(left,#3498db,#f47920 10%,#d71345 20%,#f7acbc 30%,#ffd400 40%,#3498db 50%,#f47920 60%,#d71345 70%,#f7acbc 80%,#ffd400 90%,#3498db);
   color: transparent;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-animation: slide 2s infinite linear;
   animation: slide 5s infinite linear;
   font-style: italic;
@@ -520,6 +520,7 @@ main {
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
+
 .prose blockquote {
   border-radius: 0.1875rem;
   padding: .625rem 1.25rem;
@@ -553,6 +554,13 @@ main {
   background: var(--theme-color);
   color: rgba(var(--tw-colors-i-gray-100), 1);
   cursor: pointer;
+  outline: 2px solid #d4de9c;
+  outline-offset: 1px;
+}
+
+.prose li::before {
+  outline: 2px solid #d4de9c;
+  outline-offset: 1px;
 }
 
 .prose ul li:before {
