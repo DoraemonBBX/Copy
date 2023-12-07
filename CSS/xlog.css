@@ -1,0 +1,888 @@
+@charset "UTF-8";
+/*防止css添加中文乱码--@charset 属性指定样式文件(.css 后缀)中使用的字符编码，且只能在 CSS 文件中使用。
+它必须是样式表中的第一个元素，而前面不得有任何字符，就连注释也不行。如果有多个 @charset 规则被声明，只有第一个会被使用，而且不能在 HTML 元素或 HTML 页面的中使用，即不能在 <style> 元素内使用。*/
+/*参考教程：
+【零·方法】：https://qfdk.xlog.app/xLog-kai-qi-zi-ding-yi-CSS 【开启自定义教程】
+
+【壹·导航】：https://blog.ncs.fun/ 【副标题、导航条、头像。文章概要浮动、鼠标选择样式】
+
+【贰·字体】：
+https://cloud.tencent.com/developer/article/1845019 （字体设置方法）
+https://tonyxu.io/blog/recommending-lxgw-font/ （字体采用霞鹜文楷：https://github.com/lxgw/LxgwWenKai ）
+https://blog.csdn.net/flower_CSDN/article/details/81302523 （花样字体）
+
+【叁·隐藏】：https://blog.yixiao.org/xlog-blockchain-info （sorry for Xlog）
+
+【肆·其他】：
+https://loen.xlog.app/ 
+https://birdgg.me/ 
+https://diygod.cc/ 
+https://enpitsulin.xlog.app/ 
+https://xfeed.app/notes/57409-33 
+https://blog.zezeshe.com/archives/xlog-ram-rem.html#
+https://endercat.ir/
+https://311110.xyz/
+https://hackpig520.xlog.app
+
+【伍·工具】：
+xLog-custom-css-debugger：https://github.com/birdgg/xLog-custom-css-debugger
+stylebot
+
+【陆·记录】：
+https://xfeed.app/notes/57409-33#user-content-fnref-3
+
+*/
+
+/*--字体：霞鹜文楷--*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/lxgwwenkaiscreenr.css");
+
+/*-- https://birdgg.me/ --*/
+@import url('https://fastly.jsdelivr.net/gh/DIYgodLab/xLog-css@v0.0.8/lazy.css');
+
+/*-- 图像滤镜库 --*/
+/* https://una.github.io/CSSgram/ */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.10/cssgram.min.css')
+
+@font-face {
+  font-family: 'Candyshop';
+  src: url('https://fastly.jsdelivr.net/gh/DIYgodLab/xLog-css@v0.0.2/Candyshop.otf');
+  font-display: swap;
+}
+
+:root {
+  --theme-color: #ffa631 !important;
+  --font-fans: 'SF Compact Rounded', 'PingFang SC','LXGW WenKai Screen R' ,'Microsoft YaHei', Lato, sans-serif;
+  --header-height: max(50vh, 250px);
+  --banner-bg-color: #af7427cc;
+  --grey-0: #ccd0da57;
+  --grey-1: #fdfdfd;
+  --grey-2: #f7f7f7;
+  --grey-3: #eff2f3;
+  --grey-4: #ccc;
+  --grey-5: #999;
+  --grey-6: #666;
+  --grey-7: #333;
+  --grey-8: #222;
+  --grey-9: #000;
+  --grey-1-a0: rgba(253, 253, 253, 0);
+  --grey-1-a7: rgba(253, 253, 253, .7);
+  --grey-1-a5: rgba(253, 253, 253, .5);
+  --grey-1-a3: rgba(253, 253, 253, .3);
+  --grey-9-a1: rgba(0, 0, 0, .1);
+  --grey-9-a5: rgba(0, 0, 0, .5);
+  --grey-2-a0: rgba(247, 247, 247, 0);
+  --color-pink-light: #ffe6fa;
+  --color-cyan-light: #e3fdf5;
+  --color-red: #e9546b;
+  --color-pink: #ed6ea0;
+  --color-orange: #ec8c69;
+  --color-yellow: #eab700;
+  --color-green: #0a7426;
+  --color-aqua: #3e999f;
+  --color-blue: #38a1db;
+  --color-purple: #9d5b8b;
+  --color-grey: #869194;
+  --color-red-a1: rgba(233, 84, 107, .1);
+  --color-red-a3: rgba(233, 84, 107, .3);
+  --color-pink-a3: rgba(237, 110, 160, .3);
+  --color-pink-light-a3: rgba(255, 230, 250, .3);
+  --color-pink-light-a5: rgba(255, 230, 250, .5);
+  --color-pink-light-a7: rgba(255, 230, 250, .7);
+  --body-bg-shadow: var(--grey-2);
+  --box-bg-shadow: var(--grey-9-a1);
+  --text-color: var(--grey-7);
+  --header-text-color: var(--grey-0);
+  cursor: url('https://jsd.cdn.zzko.cn/gh/DoraemonBBX/Copy@main/Minions%20Cursores/normal.cur') 0 0, auto;
+}
+
+html.dark {
+  --grey-0: #c9cbff24;
+  --grey-1: #302d411c;
+  --grey-2: #1818184f;
+  --grey-3: #444;
+  --grey-4: #666;
+  --grey-5: #aaa;
+  --grey-6: #ccc;
+  --grey-7: #ddd;
+  --grey-8: #eee;
+  --grey-9: #f7f7f7;
+  --grey-1-a7: rgba(34, 34, 34, .7);
+  --grey-1-a5: rgba(34, 34, 34, .5);
+  --grey-1-a3: rgba(34, 34, 34, .3);
+  --grey-1-a0: rgba(34, 34, 34, 0);
+  --grey-9-a1: rgba(51, 51, 51, .1);
+  --grey-2-a0: rgba(54, 54, 54, 0);
+  --color-pink-light: #322d31;
+  --color-cyan-light: #2d3230;
+  --color-red: rgba(237, 118, 137, .9);
+  --color-pink: rgba(241, 139, 179, .8);
+  --color-orange: rgba(240, 163, 135, .8);
+  --color-yellow: #ffe175;
+  --color-green: #86c59d;
+  --color-aqua: #97d3d6;
+  --color-blue: #9cd0ed;
+  --color-purple: #cfacc5;
+  --color-grey: #c3c8ca;
+  --body-bg-shadow: #000;
+  --box-bg-shadow: #000;
+  --text-color: var(--grey-5);
+  --header-text-color: var(--grey-9);
+}
+
+/*--鼠标样式 | https://blog.ncs.fun/mou-ren-yao-de-xlog-shu-biao-yang-shi --*/
+/*--鼠标样式文件为 cur，自己找喜欢的喜欢的图去转换或直接下载.cur 文件，尺寸为 32×32--*/
+button {
+	cursor:url(https://jsd.cdn.zzko.cn/gh/DoraemonBBX/Copy@main/Minions%20Cursores/normal.cur), auto;  
+}
+.cursor-pointer {
+	cursor:url(https://jsd.cdn.zzko.cn/gh/DoraemonBBX/Copy@main/Minions%20Cursores/normal.cur), auto;  
+}
+.xlog-user {
+	cursor:url(https://jsd.cdn.zzko.cn/gh/DoraemonBBX/Copy@main/Minions%20Cursores/normal.cur), auto;  
+}
+.flex.-mx-5 {
+	cursor:url(https://jsd.cdn.zzko.cn/gh/DoraemonBBX/Copy@main/Minions%20Cursores/normal.cur), auto;  
+}
+.space-y-8 {
+	cursor:url(https://jsd.cdn.zzko.cn/gh/DoraemonBBX/Copy@main/Minions%20Cursores/normal.cur), auto;  
+}
+
+.xlog-page {
+  background: linear-gradient(to top, var(--body-bg-shadow) 0, var(--grey-1) 20%) no-repeat bottom;
+}
+
+.xlog-page .max-w-screen-md {
+  max-width: 1000px;
+}
+
+.xlog-header {
+  position: sticky;
+  height: 400px;
+  top: -360px;
+  z-index: 1;
+  border: none;
+  background-color: var(--grey-1)
+}
+
+.xlog-header .flex.py-12.w-full {
+  width: 100%;
+  justify-content: center;
+}
+
+.xlog-header .xlog-banner {
+  height: calc(100% - 40px)
+}
+
+.xlog-header .xlog-banner img[alt=banner] {
+  width: 100%;
+  max-width: unset;
+  filter: blur(5px) brightness(75%)
+}
+
+@media (width > 1024px) {
+  .xlog-page-index .xlog-header {
+    height: 350px;
+    top: calc(40px - 100vh);
+  }
+}
+
+.xlog-site-name {
+  color: var(--theme-color);
+  font-family: Candyshop,cursive;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, -1.414px 0 0 #fff, 1.414px 0 0 #fff, 0 -1.414px 0 #fff, 0 1.414px 0 #fff;
+  font-size: 35px;
+}
+
+.xlog-page-index,
+.xlog-page-post {
+  font-family: "LXGW WenKai Screen R", sans-serif;
+}
+
+.xlog-site-info {
+    border: 1px solid #fff;
+    transition: .3s ease;
+}
+
+.dark .xlog-site-info {
+  border: 1px solid var(--border-color);;
+}
+
+.xlog-site-description {
+  background-image: -webkit-linear-gradient(left,#3498db,#f47920 10%,#d71345 20%,#f7acbc 30%,#ffd400 40%,#3498db 50%,#f47920 60%,#d71345 70%,#f7acbc 80%,#ffd400 90%,#3498db);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-animation: slide 2s infinite linear;
+  animation: slide 5s infinite linear;
+  font-style: italic;
+}
+
+.xlog-fab {
+  bottom: unset;
+  top: 0;
+}
+
+/*--导航条移到顶部*/
+.xlog-site-navigation {
+  position:absolute;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  top:0px;
+  width: 100%;
+}
+
+/*--导航条链接*/
+.xlog-site-navigation a {
+  float: left;
+  display:flex;
+  color: var(--theme-color);
+  justify-content: center; /*使子项目水平居中*/
+  align-items: center; /*使子项目垂直居中*/
+  text-align: center;
+  padding: 1em;
+  text-decoration: none;
+}
+
+/* 链接颜色修改 */
+.xlog-site-navigation a:hover {
+  background-color: #e9f1f6;
+  color: #396045;
+}
+
+/*--连接按钮位置不变*/
+.pl-1 {
+  margin-left:auto
+}
+
+/*--调整横幅位置*/
+.py-12 {
+  padding-bottom: 20px;
+  padding-top: 45px;  
+}
+
+/*--调整连接上下位置*/
+.flex.text-gray-500 {
+  padding-bottom: -5px;
+
+}
+/*--连接前方添加文字before是前after是后*/
+.mt-auto:before {
+  content: "浅浅喜 静静爱 深深懂得 淡淡释怀"; 
+  color: var(--theme-color);
+}
+
+/*--返回顶部--*/
+/*-- https://diygod.cc/ --*/
+.xlog-back-to-top {
+    background: url('https://fastly.jsdelivr.net/gh/DIYgodLab/xLog-css@v0.0.7/scroll.png') center/cover;
+    width: 70px;
+    height: 900px;
+    margin-top: 0;
+    opacity: 1;
+    border: none;
+    right: 50px;
+}
+
+.xlog-back-to-top.xlog-fab-inactive {
+    transform: translate(0, -900px);
+    display: block;
+}
+
+.xlog-back-to-top i {
+  display: none;
+}
+
+
+/*--头像鼠标候选切换为想要的文字 */
+/*-- https://blog.ncs.fun/tou-xiang-shu-biao-hou-xuan-qie-huan-wei-xiang-yao-de-wen-zi --*/
+.xlog-site-icon {
+    position: relative;
+    display: flex;
+}
+
+.xlog-site-icon::before,
+.xlog-site-icon::after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.xlog-site-icon:hover::before,
+.xlog-site-icon:hover:after {
+    width: 100%;
+    height: 100%;
+}
+
+.xlog-site-icon:hover:after {
+    background-image:url('https://xlog.app/_next/image?url=https%3A%2F%2Fipfs.4everland.xyz%2Fipfs%2Fbafkreibiivd46q6qfd6dzri6j6ltw53tzrudcqk7fmxhsj32qbqer7zkra&w=1920&q=75');
+    content: "小柒";
+}
+
+body { font-family: "LXGW WenKai Screen R", sans-serif; }
+/*添加文字*/
+/*-- https://endercat.ir/ --*/
+/*
+.xlog-site-description::after {
+	content: "欢迎来撩...";
+	font-weight: bolder;
+	color: var(--theme-color);
+}
+*/
+
+/*-- 描述: 为 导航栏 添加自定义内容 --*/
+/*
+.xlog-site-navigation::before {
+	content: " | 欢迎来到小站!";
+	font-weight: bolder;
+	color: grey;
+  box-align: center;
+}
+*/
+.xlog-post-summary::after {
+  content: "小柒有话说:人工智障的摘要不一定是文章要写的内容！！！";
+  font-size: 14px;
+  color: #a00202;
+}
+.xlog-comment-count:after {
+  content: " - 哦！上帝啊！评论的人居然这么少，这简直糟糕透了，比葫芦娃救爷爷还要糟糕。";
+  color: #cccccc;
+  font-size: 70%
+}
+/*-- 
+替换百褶裙的footer 
+来源于 开头引入的 https://fastly.jsdelivr.net/gh/DIYgodLab/xLog-css@v0.0.8/lazy.css
+--*/
+/*
+footer:before {
+    content: ' ';
+    background: url(https://counter.likepoems.com/get/@orange?theme=rule34) center/contain no-repeat;
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: -75px;
+    left: 0;
+    pointer-events: none;
+}
+*/
+
+/*-- 在评论区之前添加赞赏码 图片位置未完善 --*/
+/*
+.xlog-comment:before{
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  background: url(https://jsd.cdn.zzko.cn/gh/DoraemonBBX/Copy@main/reward/alipay.jpg) no-repeat center;
+  background-size: 100%;
+  vertical-align: middle;
+}
+*/
+
+/*rss图标优化*/
+.fill-gray-500 svg {
+  color: var(--theme-color);
+}
+
+/*震动关注*/
+@keyframes color-change {
+  0% {
+    transform: translate(-2px, -2px);
+  }
+  50% {
+    transform: translate(2px, 2px);
+  }
+  100% {
+    transform: translate(-2px, -2px);
+  }
+}
+.xlog-site-follow-button {
+  animation-name: color-change;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/*--鼠标选择样式按钮变大*/
+.button:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);   
+}
+
+main {
+  max-width: 1000px !important;
+  background: linear-gradient(to top, var(--grey-0) 0, var(--grey-1) 20%) no-repeat top;
+  box-shadow: 0 0.25rem 1rem 0.3125rem #0000003b;
+  padding-bottom: 3.5rem;
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+
+.xlog-posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.xlog-post:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.xlog-posts>.xlog-post:nth-child(even) .xlog-post-cover {
+  margin-right: auto;
+  margin-left: 1.5rem;
+  -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 100%, 8% 100%);
+  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 8% 100%);
+  border-radius: 0 0.625rem 0.625rem 0;
+}
+
+.xlog-post {
+  display: flex;
+  width: calc(100% - 2rem);
+  min-width: calc(100% - 2rem);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.625rem 1.875rem -0.9375rem var(--box-bg-shadow);
+  transition: all .2s ease-in-out 0.3s;/* 上浮这个过程需要的时间 */
+  height: 14rem;
+  margin: 1rem;
+  margin-top: 1rem !important;
+  padding: 0;
+  background-color: transparent;
+}
+
+.xlog-post:hover {
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15);/* 鼠标悬浮时盒子出现的阴影 */
+  background-color: transparent;
+  transform: translate(0, -10px);/* 鼠标悬浮时盒子上移10px */
+}
+
+/*---鼠标选择样式归档文章列表向上浮动*/
+.items-center.-mx-2 {
+  transition: all 0.3s;/* 上浮这个过程需要的时间 */
+}
+.items-center.-mx-2:hover {
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15);/* 鼠标悬浮时盒子出现的阴影 */
+  transform: translate(0, -5px);/* 鼠标悬浮时盒子上移10px */
+}
+
+.xlog-post .xlog-post-cover {
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  clip-path: polygon(0 0, 92% 0%, 100% 100%, 0% 100%);
+}
+
+.xlog-posts .xlog-post>.xlog-post-cover>span img {
+  width: 100%;
+  height: 14rem;
+  transition: all .5s;
+}
+
+.xlog-post .xlog-post-cover img:hover {
+  transform: scale(1.1) rotate(2deg)
+}
+
+.xlog-post>div:nth-of-type(1) {
+  position: relative;
+  width: 50%;
+  height:100%;
+  padding: 2rem;
+  perspective: 62.5rem;
+  justify-content: space-around;
+}
+
+
+/* post */
+.prose :not(pre)>code {
+  color: var(--theme-color);
+  border-radius: 0.3rem;
+  border: 0.0625rem solid rgba(0,0,0,.1);
+  background-color: var(--grey-0);
+  padding: 0.2rem 0.3rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.prose blockquote {
+  border-radius: 0.1875rem;
+  padding: .625rem 1.25rem;
+  border-left: 0.25rem solid var(--theme-color);
+  font-size: 90%;
+  background-color: var(--grey-2);
+  margin: 1.25rem 0;
+}
+
+.prose ol {
+  counter-reset: counter;
+}
+
+.prose li {
+  list-style: none;
+  position: relative;
+}
+
+.prose ol li:before {
+  counter-increment: counter;
+  content: counter(counter);
+  position: absolute;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  text-align: center;
+  font-size: .8em;
+  line-height: 1.4;
+  top: 0.5em;
+  left: -1.8em;
+  background: var(--theme-color);
+  color: rgba(var(--tw-colors-i-gray-100), 1);
+  cursor: pointer;
+}
+
+.prose ul li:before {
+  content: "";
+  position: absolute;
+  width: 0.4em;
+  height: 0.4em;
+  background: var(--theme-color);
+  border-radius: 50%;
+  top: 0.85em;
+  left: -1em;
+}
+
+.prose .table-wrapper {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.prose table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: .875em;
+  margin: 0 0 1.25rem;
+  width: 100%;
+  overflow: auto;
+}
+
+.prose table tbody tr:nth-child(2n-1) {
+  background: none !important;
+}
+
+.prose table th,
+td {
+  border: 0.0625rem solid var(--border-color);
+  border-bottom: 0.1875rem solid var(--border-color);
+  padding: 0.5rem;
+  padding-bottom: 0.625rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.prose table th {
+  font-weight: 700;
+  text-align: center;
+}
+
+.prose table td {
+  border-bottom-width: 0.0625rem;
+}
+
+.spoiler {
+  filter: blur(8px);
+  transition: filter .5s;
+}
+
+.spoiler:hover {
+  filter: blur(0px);
+}
+
+.dark .info {
+  --note-border: rgba(85, 98, 132, 0.8);
+  --note-bg: rgba(48, 49, 50, 0.8);
+  --note-text: rgba(109, 164, 219, 0.8);
+  --note-hover: rgba(39, 127, 214, 0.8);
+}
+
+.info {
+  --note-border: #8fa4dc;
+  --note-bg: #f1f9ff;
+  --note-text: #1d4974;
+  --note-hover: #1d5fa0;
+}
+
+.note {
+  background: var(--note-bg, var(--grey-2));
+  color: var(--grey-6);
+  border-left: 0.25rem solid var(--note-border, var(--grey-4));
+  font-size: .875em;
+  --primary-color: var(--note-text);
+  border-radius: 0.1875rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.dark .error {
+  --note-border: rgba(146, 107, 115, 0.8);
+  --note-bg: rgba(50, 48, 48, 0.8);
+  --note-text: rgba(239, 38, 79, 0.8);
+  --note-hover: rgba(168, 49, 72, 0.8);
+}
+
+.error {
+  --note-border: #f4b3c1;
+  --note-bg: #fff2f5;
+  --note-text: #cc0f35;
+  --note-hover: #f14668;
+}
+
+.dark .success {
+  --note-border: rgba(97, 116, 88, 0.8);
+  --note-bg: rgba(50, 50, 48, 0.8);
+  --note-text: rgba(128, 200, 129, 0.8);
+  --note-hover: rgba(41, 95, 42, 0.8);
+}
+
+.success {
+  --note-border: #a3c293;
+  --note-bg: #fcfff5;
+  --note-text: #2c662d;
+  --note-hover: #3b883c;
+}
+
+/*-- 黑字条 --*/
+/*-- https://endercat.ir/zai-bo-ke-shang-shi-yong-hei-tiao-zi-md --*/
+/*-- <span class="heimu" title="此处为悬浮在黑条上显示的字"> </span> --*/
+.heimu, .heimu a, a .heimu, .heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none;
+}
+.heimu:hover, .heimu:active,
+.heimu:hover .heimu, .heimu:active .heimu {
+    color: white !important;
+}
+.heimu:hover a, a:hover .heimu,
+.heimu:active a, a:active .heimu {
+    color: lightblue !important;
+}
+.heimu:hover .new, .heimu .new:hover, .new:hover .heimu,
+.heimu:active .new, .heimu .new:active, .new:active .heimu {
+    color: #BA0000 !important;
+}
+
+
+/*--友链--*/
+/*-- https://311110.xyz/hello-xlog --*/
+.board-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    padding-top: 1em;
+    margin-left: -15px;
+    width: calc(100% + 15px)
+}
+
+.board-list .board-item {
+    position: relative;
+    background: #fff;
+    -webkit-box-shadow: 0 0 20px 2px rgba(0,0,0,.1);
+    box-shadow: 0 0 20px 2px rgba(0,0,0,.1);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    border: none!important;
+    margin-left: 15px;
+    margin-bottom: 15px
+}
+
+.board-list .board-item.hover {
+    -webkit-transform: scale(.95);
+    transform: scale(.95)
+}
+
+@media screen and (min-width: 768px) {
+    .board-list .board-item:hover {
+        -webkit-transform:scale(.97);
+        transform: scale(.97);
+        border: none!important
+    }
+}
+
+.board-list .board-item .board-thumb {
+    position: relative;
+    width: 100%;
+    padding-top: 100%
+}
+
+.board-list .board-item .board-thumb img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: .5s ease-in-out opacity;
+    transition: .5s ease-in-out opacity
+}
+
+.board-list .board-item .board-title,.board-list .board-item .board-title a {
+    padding: 8px 0!important;
+    font-size: 1.2em!important;
+    overflow: hidden!important;
+    white-space: nowrap!important;
+    text-align: center!important;
+    color: rgba(0,0,0,.86)!important;
+    font-weight: 700!important;
+    border: none
+}
+
+.board-list .board-item .board-title a:hover,.board-list .board-item .board-title:hover {
+    border: none
+}
+
+@media screen and (max-width: 767px) {
+    .board-list .board-item {
+        width:calc(33.33333333% - 15px)
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .board-list .board-item {
+        width:calc(25% - 15px)
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .board-list .board-item {
+        width:calc(50% - 15px)
+    }
+}
+
+/*--  背景图像控制：水彩等样式都有 --*/
+/* https://bennettfeely.com/image-effects/ */
+/*
+.pencil-effect {
+	$url : url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Point_Reyes_Lighthouse_%28April_2012%29.jpg/593px-Point_Reyes_Lighthouse_%28April_2012%29.jpg);
+
+	background-image: $url;
+	background-size: cover;
+	background-position: center;
+
+	@supports (filter: invert(1)) and (background-blend-mode: difference) {
+		background-image: $url, $url;
+		background-blend-mode: difference;
+		background-position:
+			calc(50% - 1px) calc(50% - 1px),
+			calc(50% + 1px) calc(50% + 1px);
+		filter: brightness(2) invert(1) grayscale(1);
+		box-shadow: inset 0 0 0 1px black;
+	}
+}
+
+[class$=-effect] img {
+	vertical-align: top !important;
+	margin: 0 !important;
+	opacity: 0 !important;
+}
+
+/* CodePen Styles */
+/*
+body {
+	display: flex;
+	height: 100vh;
+}
+div {
+	margin: auto;
+}
+*/
+
+/* phone */
+@media (max-width: 767px) {
+  .xlog-post {
+  flex-direction: column-reverse !important;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+  .xlog-back-to-top {
+      display: none;
+  }
+}
+
+.xlog-post .xlog-post-cover {
+  width: 100%;
+  height: 14rem;
+  margin: auto;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  border-radius: 0.625rem 0.625rem 0 0;
+}
+
+.xlog-posts>.xlog-post:nth-child(even) .xlog-post-cover {
+  width: 100%;
+  margin: auto;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+  border-radius: 0.625rem 0.625rem 0 0;
+}
+
+.xlog-post>div:nth-of-type(1) {
+  width: 100%;
+  padding: 10px;
+}
+
+
+
+main {
+  max-width: 500px;
+}
+
+
+/*--隐藏原有区块链区块 sorry for Xlog --*/
+/*-- https://blog.yixiao.org/xlog-blockchain-info --*/
+/*
+.xlog-blockchain-info{
+  display:none; 
+}
+*/
