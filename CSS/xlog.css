@@ -52,7 +52,7 @@ https://xfeed.app/notes/57409-33#user-content-fnref-3
 :root {
   --theme-color: #ffa631 !important;
   --font-fans: 'SF Compact Rounded', 'PingFang SC','LXGW WenKai Screen R' ,'Microsoft YaHei', Lato, sans-serif;
-  --header-height: max(50vh, 250px);
+  --header-height: max(50vh, 450px);
   --banner-bg-color: #af7427cc;
   --grey-0: #ccd0da57;
   --grey-1: #fdfdfd;
