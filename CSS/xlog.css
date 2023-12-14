@@ -189,7 +189,7 @@ button {
 .xlog-site-name {
   color: var(--theme-color);
   font-family: Candyshop,cursive;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #7287fd, 0 0 82px #7287fd, 0 0 92px #7287fd, 0 0 102px #7287fd, 0 0 151px #7287fd;
+  text-shadow:-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, -1.414px 0 0 #fff, 1.414px 0 0 #fff, 0 -1.414px 0 #fff, 0 1.414px 0 #fff;
   font-size: 35px;
 }
 
@@ -889,8 +889,12 @@ main {
 
 /*--隐藏原有区块链区块 sorry for Xlog --*/
 /*-- https://blog.yixiao.org/xlog-blockchain-info --*/
+/*-- https://xfeed.app/notes/57409-33 --*/
 /*
 .xlog-blockchain-info{
   display:none; 
 }
 */
+body > div.xlog-page.xlog-page-index.xlog-user.xlog-deprecated-class > header > div.px-5.max-w-screen-lg.mx-auto.h-full.relative.flex.items-center.flex-col > div.flex.py-12.w-full > div > div > div.flex.space-x-0.sm\:space-x-3.flex-col.sm\:flex-row.text-sm.sm\:text-base > span.xlog-site-patron.absolute.-bottom-9.right-\[calc\(100\%\+50px\)\].sm\:static {
+  display: none;
+}
